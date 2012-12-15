@@ -1,4 +1,5 @@
-﻿Imports WebApplication2.Services
+﻿Imports Nancy.ModelBinding
+Imports WebApplication2.Services
 Imports WebApplication2.Model
 Imports Nancy
 
@@ -22,6 +23,14 @@ Namespace Modules
                                                 Return HttpStatusCode.NotFound
                                             End If
                                         End Function
+            MyBase.Get("/trees/add/") = Function(parameters)
+                                            Return View("AddTree.vbhtml", New TreeModel)
+                                        End Function
+            MyBase.Post("/trees/add/") = Function(parameters)
+                                             Dim tree = Me.Bind(Of TreeModel)()
+                                             treeService.Add(tree)
+                                             Return Response.AsRedirect("/trees")
+                                         End Function
 
         End Sub
 

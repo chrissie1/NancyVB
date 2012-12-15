@@ -40,23 +40,11 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Configuration">
-      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.1.0\lib\net35\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="CsQuery">
       <HintPath>..\packages\CsQuery.1.3.1\lib\net40\CsQuery.dll</HintPath>
-    </Reference>
-    <Reference Include="FakeItEasy">
-      <HintPath>..\packages\FakeItEasy.1.7.4626.65\lib\NET40\FakeItEasy.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -106,6 +94,7 @@
     <Content Include="Views\Bushes.vbhtml" />
     <Content Include="Views\Bush.vbhtml" />
     <Content Include="Views\AddBush.vbhtml" />
+    <Content Include="Views\AddTree.vbhtml" />
     <None Include="Views\Default.vbhtml" />
     <None Include="Views\Master.vbhtml" />
     <Content Include="Web.config" />
@@ -138,13 +127,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MyBootStrapper.vb" />
-    <Compile Include="RootPathProvider.vb" />
     <Compile Include="Services\BushService.vb" />
     <Compile Include="Services\IBushService.vb" />
     <Compile Include="Services\ITreeService.vb" />
     <Compile Include="Services\TreeService.vb" />
-    <Compile Include="Tests\TestBushesModule.vb" />
-    <Compile Include="Tests\TestTreesModule.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -178,10 +164,6 @@
     <ProjectReference Include="G:\Sourcecode\Nancy\src\Nancy.Hosting.Aspnet\Nancy.Hosting.Aspnet.csproj">
       <Project>{15b7f794-0bb2-4b66-ad78-4a951f1209b2}</Project>
       <Name>Nancy.Hosting.Aspnet</Name>
-    </ProjectReference>
-    <ProjectReference Include="G:\Sourcecode\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">
-      <Project>{d79203c0-b672-4751-9c95-c3ab7d3fefbe}</Project>
-      <Name>Nancy.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="G:\Sourcecode\Nancy\src\Nancy.ViewEngines.Razor\Nancy.ViewEngines.Razor.csproj">
       <Project>{2c6f51df-015c-4db6-b44c-0e5e4f25e2a9}</Project>

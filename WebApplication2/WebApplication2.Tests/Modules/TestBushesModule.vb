@@ -87,10 +87,5 @@ Namespace Tests
             Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode)
         End Sub
 
-        <Test>
-        Public Sub i()
-            Dim x As New XDocument("")
-        End Sub
-
     End Class
 End Namespace

@@ -7,7 +7,7 @@ Public Class MyBootStrapper
     Inherits DefaultNancyBootstrapper
 
     Protected Overrides Sub ConfigureApplicationContainer(container As TinyIoCContainer)
-        container.Register(Of IBushService, BushService).AsSingleton()
-        container.Register(Of ITreeService, TreeService).AsSingleton()
+        container.Register(Of BushService).AsSingleton()
+        container.Register(Of TreeService).AsSingleton()
     End Sub
 End Class

@@ -2,8 +2,7 @@
 
 Namespace Services
     Public Class TreeService
-        Implements ITreeService
-
+        
         Private ReadOnly _trees As IList(Of TreeModel)
 
         Public Sub New()
@@ -13,12 +12,16 @@ Namespace Services
             _trees.Add(New TreeModel() With {.Id = 3, .Genus = "Betula"})
         End Sub
 
-        Public Function AllTrees() As IList(Of TreeModel) Implements ITreeService.AllTrees
+        Public Function AllTrees() As IList(Of TreeModel)
             Return _trees
         End Function
 
-        Public Function FindById(ByVal id As Integer) As TreeModel Implements ITreeService.FindById
+        Public Function FindById(ByVal id As Integer) As TreeModel
             Return _trees.SingleOrDefault(Function(x) x.Id = id)
         End Function
+
+        Public Sub Add(ByVal treeModel As TreeModel)
+            _trees.Add(treeModel)
+        End Sub
     End Class
 End Namespace

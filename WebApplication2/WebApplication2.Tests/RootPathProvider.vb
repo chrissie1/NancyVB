@@ -9,6 +9,7 @@ Public Class RootPathProvider
     Public Function GetRootPath() As String Implements IRootPathProvider.GetRootPath
         If Not String.IsNullOrEmpty(_cachedRootPath) Then Return _cachedRootPath
         Dim currentDirectory = New DirectoryInfo(Environment.CurrentDirectory)
+        currentDirectory = currentDirectory.Parent.Parent.Parent.GetDirectories()(1)
         Dim rootPathFound = False
         While Not rootPathFound
             Dim directoriesContainingViewFolder = currentDirectory.GetDirectories("Views", SearchOption.AllDirectories)
