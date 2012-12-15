@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Authentication.Forms"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebApplication2.Tests", "WebApplication2.Tests\WebApplication2.Tests.vbproj", "{43FFEFB5-88CA-4602-9BCB-220C99CE2451}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1.Tests", "WebApplication1.Tests\WebApplication1.Tests.csproj", "{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,14 @@ Global
 		{43FFEFB5-88CA-4602-9BCB-220C99CE2451}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
 		{43FFEFB5-88CA-4602-9BCB-220C99CE2451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43FFEFB5-88CA-4602-9BCB-220C99CE2451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.MonoDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.MonoDebug|Any CPU.Build.0 = Debug|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.MonoRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

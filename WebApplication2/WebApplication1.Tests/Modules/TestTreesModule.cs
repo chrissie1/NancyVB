@@ -1,90 +1,99 @@
-﻿Imports FakeItEasy
-Imports WebApplication2.Modules
-Imports Nancy
-Imports NUnit.Framework
-Imports Nancy.Testing
-Imports Nancy.ViewEngines.Razor
+﻿using FakeItEasy;
+using WebApplication1.Modules;
+using Nancy;
+using NUnit.Framework;
+using Nancy.Testing;
+using Nancy.ViewEngines.Razor;
 
-Namespace Tests
+namespace WebApplication1.Tests.Modules
+{
+    [TestFixture]
+    public class TestTreesModule
+    {
+        private Browser _browser;
 
-    <TestFixture>
-    Public Class TestTreesModule
+        [SetUp()]
+        public void FixtureSetup()
+        {
+            var configuration = A.Fake<IRazorConfiguration>();
+            var bootstrapper = new ConfigurableBootstrapper(config =>
+                {
+                    config.Module<TreesModule>();
+                    config.ViewEngine(new RazorViewEngine(configuration));
+                });
+            _browser = new Browser(bootstrapper);
+        }
 
-        Private _browser As Browser
+        [Test]
+        public void IfPlantsRouteReturnsStatusCodeOk()
+        {
+            var result = _browser.Get("/trees", x => {
+                                                         x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        }
 
-        <SetUp()>
-        Public Sub FixtureSetup()
-            Dim configuration = A.Fake(Of IRazorConfiguration)()
-            Dim bootstrapper = New ConfigurableBootstrapper(Sub(config)
-                                                                config.Module(Of TreesModule)()
-                                                                config.ViewEngine(New RazorViewEngine(configuration))
-                                                            End Sub)
-            _browser = New Browser(bootstrapper)
-        End Sub
+        [Test]
+        public void IfPlantWithId1RouteReturnsStatusCodeOk()
+        {
+            var result = _browser.Get("/trees/1", x => {
+                                                           x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        }
 
-        <Test>
-        Public Sub IfPlantsRouteReturnsStatusCodeOk()
-            Dim result = _browser.Get("/trees", Sub(x)
-                                                    x.HttpRequest()
-                                                End Sub)
-            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode)
-        End Sub
+        [Test]
+        public void IfPlantWithIdabcRouteReturnsStatusCodeOk()
+        {
+            var result = _browser.Get("/trees/abc", x => {
+                                                             x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
+        }
 
-        <Test>
-        Public Sub IfPlantWithId1RouteReturnsStatusCodeOk()
-            Dim result = _browser.Get("/trees/1", Sub(x)
-                                                      x.HttpRequest()
-                                                  End Sub)
-            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode)
-        End Sub
+        [Test]
+        public void IfPlantWithId2ReturnsWebpagePlantWithId2()
+        {
+            var result = _browser.Get("/trees/2", x => {
+                                                           x.HttpRequest();
+            });
+            Assert.AreEqual("2", result.BodyAsXml().Descendants("td"));
+        }
 
-        <Test>
-        Public Sub IfPlantWithIdabcRouteReturnsStatusCodeOk()
-            Dim result = _browser.Get("/trees/abc", Sub(x)
-                                                        x.HttpRequest()
-                                                    End Sub)
-            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode)
-        End Sub
+        [Test]
+        public void IfPlantAddReturnsStatusCodeOk()
+        {
+            var result = _browser.Get("/trees/add/", x => {
+                                                              x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        }
 
-        <Test>
-        Public Sub IfPlantWithId2ReturnsWebpagePlantWithId2()
-            Dim result = _browser.Get("/trees/2", Sub(x)
-                                                      x.HttpRequest()
-                                                  End Sub)
-            Assert.AreEqual("2", result.BodyAsXml.Descendants("td")(1).Value)
-        End Sub
+        [Test]
+        public void IfPlantAddReturnsBody()
+        {
+            var result = _browser.Get("/trees/add/", x => {
+                                                              x.HttpRequest();
+            });
+            Assert.AreEqual("Add tree page", result.BodyAsXml().Element("title").Value);
+        }
 
-        <Test>
-        Public Sub IfPlantAddReturnsStatusCodeOk()
-            Dim result = _browser.Get("/trees/add/", Sub(x)
-                                                         x.HttpRequest()
-                                                     End Sub)
-            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode)
-        End Sub
+        [Test]
+        public void IfPlantWithId10ReturnsStatusCodeNotFound()
+        {
+            var result = _browser.Get("/trees/10", x => {
+                                                            x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
+        }
 
-        <Test>
-        Public Sub IfPlantAddReturnsBody()
-            Dim result = _browser.Get("/trees/add/", Sub(x)
-                                                         x.HttpRequest()
-                                                     End Sub)
-
-            Assert.AreEqual("Add tree page", result.BodyAsXml...<title>.Value())
-        End Sub
-
-        <Test>
-        Public Sub IfPlantWithId10ReturnsStatusCodeNotFound()
-            Dim result = _browser.Get("/trees/10", Sub(x)
-                                                       x.HttpRequest()
-                                                   End Sub)
-            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode)
-        End Sub
-
-        <Test>
-        Public Sub IfPlantWithIdReturnsStatusCodeNotFound()
-            Dim result = _browser.Get("/trees/-1", Sub(x)
-                                                       x.HttpRequest()
-                                                   End Sub)
-            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode)
-        End Sub
-    End Class
-End Namespace
+        [Test]
+        public void IfPlantWithIdReturnsStatusCodeNotFound()
+        {
+            var result = _browser.Get("/trees/-1", x => {
+                                                            x.HttpRequest();
+            });
+            Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
+        }
+    }
+}

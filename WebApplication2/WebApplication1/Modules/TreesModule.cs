@@ -1,4 +1,5 @@
-﻿using WebApplication1.Services;
+﻿using Nancy.ModelBinding;
+using WebApplication1.Services;
 using WebApplication1.Model;
 using Nancy;
 
@@ -24,6 +25,13 @@ namespace WebApplication1.Modules
                         return HttpStatusCode.NotFound;
                     }
                 };
+            Get["/trees/add/"] = parameters => View["AddTree.cshtml", new TreeModel()];
+            Post["/trees/add/"] = parameters =>
+            {
+                var tree = this.Bind<TreeModel>();
+                treeService.Add(tree);
+                return Response.AsRedirect("/trees");
+            };
         }
     }
 }

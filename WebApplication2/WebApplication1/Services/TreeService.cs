@@ -25,5 +25,10 @@ namespace WebApplication1.Services
         {
             return _trees.SingleOrDefault(x=> x.Id == id);
         }
+
+        public void Add(TreeModel treeModel)
+        {
+            _trees.Add(treeModel);
+        }
     }
 }

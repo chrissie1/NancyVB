@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyBootStrapper.cs" />
-    <Compile Include="RootPathProvider.cs" />
     <Compile Include="Services\BushService.cs" />
     <Compile Include="Services\TreeService.cs" />
     <Compile Include="Modules\BushesModule.cs" />
@@ -91,6 +90,7 @@
     <None Include="Views\AddBush.cshtml" />
     <None Include="Views\Bush.cshtml" />
     <None Include="Views\Bushes.cshtml" />
+    <Content Include="Views\AddTree.cshtml" />
     <None Include="Views\Default.cshtml" />
     <None Include="Views\Master.cshtml" />
     <None Include="Views\Tree.cshtml" />

@@ -1,7 +1,7 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<WebApplication1.Model.BushModel>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<WebApplication1.Model.TreeModel>
 
 @{
-    ViewBag.Title = "Add bush page";
+    ViewBag.Title = "Add tree page";
     Layout = "Master.cshtml";
 }
 
@@ -12,11 +12,11 @@
 }
 @section menuitems
 {
-    <a href="/bushes">Bushes</a>
+    <a href="/trees">Trees</a>
 }
 
-    <h1>Welcome to the add bush page</h1>
-    <form  action="/bushes/add/" method="post">
+    <h1>Welcome to the add tree page</h1>
+    <form  action="/trees/add/" method="post">
         <table>
             <tr>
                 <td>Id</td>
