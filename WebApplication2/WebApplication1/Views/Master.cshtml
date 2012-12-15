@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @if(IsSectionDefined("menu")){
+        <div id="menu"><a href="/">Index</a>
+        @if (IsSectionDefined("menuitems"))
+        {
+            @RenderSection("menuitems")
+        }
+        </div>
+    }
+    @RenderBody()
+</body>
+</html>
