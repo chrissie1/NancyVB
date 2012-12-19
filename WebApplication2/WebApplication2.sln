@@ -19,8 +19,6 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebApplication2.Tests", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1.Tests", "WebApplication1.Tests\WebApplication1.Tests.csproj", "{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Demo.Authentication.Forms.TestingDemo", "..\..\Nancy\src\Nancy.Demo.Authentication.Forms.TestingDemo\Nancy.Demo.Authentication.Forms.TestingDemo.csproj", "{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,14 +99,6 @@ Global
 		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
 		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0252BF38-3FCF-4E04-B86B-0EF82FF2BB10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.MonoDebug|Any CPU.ActiveCfg = MonoDebug|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.MonoDebug|Any CPU.Build.0 = MonoDebug|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.MonoRelease|Any CPU.ActiveCfg = MonoRelease|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.MonoRelease|Any CPU.Build.0 = MonoRelease|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{948A8EF6-D50C-45EA-9AFD-7A4723ADAB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

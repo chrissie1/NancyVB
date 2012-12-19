@@ -96,7 +96,9 @@
     <Content Include="Views\AddBush.vbhtml" />
     <Content Include="Views\AddTree.vbhtml" />
     <Content Include="Views\Users.vbhtml" />
-    <Content Include="Views\User.vbhtml" />
+    <Content Include="Views\User.vbhtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Views\Default.vbhtml" />
     <Content Include="Views\Login.vbhtml" />
     <None Include="Views\Master.vbhtml" />

@@ -84,7 +84,7 @@ Namespace Tests
             Dim result = _loggedInBrowserResponse.Then.Get("/users/00000000-0000-0000-0000-000000000004", Sub(x)
                                                                                                               x.HttpRequest()
                                                                                                           End Sub)
-            Assert.AreEqual("2", result.BodyAsXml.Descendants("td")(1).Value)
+            Assert.AreEqual("00000000-0000-0000-0000-000000000004", result.BodyAsXml.Descendants("td")(1).Value)
         End Sub
 
         <Test>
