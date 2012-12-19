@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\TestTreesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\TestBushesModule.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Modules\TestTreesModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">

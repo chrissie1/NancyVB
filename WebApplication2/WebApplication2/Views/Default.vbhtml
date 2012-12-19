@@ -6,3 +6,4 @@ End Code
     <h1>Welcome to the Lessthandot plantCatalog</h1>
     <a href="/trees">Trees</a>
     <a href="/bushes">Bushes</a>
+    <a href="\users">Users</a>

@@ -49,6 +49,10 @@
     <Reference Include="FakeItEasy">
       <HintPath>..\packages\FakeItEasy.1.7.4626.65\lib\NET40\FakeItEasy.dll</HintPath>
     </Reference>
+    <Reference Include="Nancy.Authentication.Forms, Version=0.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebApplication2\Bin\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -71,6 +75,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\TestUsersModule.vb" />
     <Compile Include="Modules\TestBushesModule.vb" />
     <Compile Include="Modules\TestTreesModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
