@@ -80,6 +80,14 @@ Namespace Tests
         End Sub
 
         <Test>
+        Public Sub IfPlantWithId2ReturnsStatusOk()
+            Dim result = _loggedInBrowserResponse.Then.Get("/users/00000000-0000-0000-0000-000000000004", Sub(x)
+                                                                                                              x.HttpRequest()
+                                                                                                          End Sub)
+            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode)
+        End Sub
+
+        <Test>
         Public Sub IfPlantWithId2ReturnsWebpagePlantWithId2()
             Dim result = _loggedInBrowserResponse.Then.Get("/users/00000000-0000-0000-0000-000000000004", Sub(x)
                                                                                                               x.HttpRequest()
