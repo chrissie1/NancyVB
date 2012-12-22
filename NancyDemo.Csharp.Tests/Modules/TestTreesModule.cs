@@ -1,4 +1,5 @@
-﻿using FakeItEasy;
+﻿using System.Linq;
+using FakeItEasy;
 using Nancy;
 using NUnit.Framework;
 using Nancy.Testing;
@@ -61,7 +62,7 @@ namespace NancyDemo.Csharp.Tests.Modules
             {
                 x.HttpRequest();
             });
-            Assert.AreEqual("2", result.BodyAsXml().Descendants("td"));
+            Assert.AreEqual("2", result.BodyAsXml().Descendants("td").ToList()[1].Value);
         }
 
         [Test]
@@ -81,7 +82,7 @@ namespace NancyDemo.Csharp.Tests.Modules
             {
                 x.HttpRequest();
             });
-            Assert.AreEqual("Add tree page", result.BodyAsXml().Element("title").Value);
+            Assert.AreEqual("Add tree page", result.BodyAsXml().Descendants("title").ToList()[0].Value);
         }
 
         [Test]

@@ -1,4 +1,5 @@
-﻿using FakeItEasy;
+﻿using System.Linq;
+using FakeItEasy;
 using Nancy;
 using NUnit.Framework;
 using Nancy.Testing;
@@ -57,7 +58,7 @@ namespace NancyDemo.Csharp.Tests.Modules
             var result = _browser.Get("/bushes/2", x => {
                                                             x.HttpRequest();
             });
-            Assert.AreEqual("2", result.BodyAsXml().Elements("td"));
+            Assert.AreEqual("2", result.BodyAsXml().Descendants("td").ToList()[1].Value);
         }
         [Test]
         public void IfPlantAddReturnsStatusCodeOk()
@@ -74,7 +75,7 @@ namespace NancyDemo.Csharp.Tests.Modules
             var result = _browser.Get("/bushes/add/", x => {
                                                                x.HttpRequest();
             });
-            Assert.AreEqual("Add bush page", result.BodyAsXml().Element("title").Value);
+            Assert.AreEqual("Add bush page", result.BodyAsXml().Descendants("title").ToList()[0].Value);
         }
 
         [Test]
