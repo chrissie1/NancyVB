@@ -10,7 +10,7 @@ End Section
 
     <h1>Welcome to the users page</h1>
     <table>
-        <tr><th>Id</th><th>Name</th><th>password</th></tr>
+        <tr><th>Id</th><th>Name</th><th>Name</th><th>password</th></tr>
         @For Each user As NancyDemo.VB.Model.UserModel In Model.Users
             @<tr>
                 <td>@user.Id</td>

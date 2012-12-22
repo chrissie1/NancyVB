@@ -1,16 +1,18 @@
-﻿@Inherits Nancy.ViewEngines.Razor.NancyRazorViewBase(Of NancyDemo.VB.Model.UserModel)
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyDemo.Csharp.Model.UserModel>
 
-@Code
-    ViewBag.Title = "User page"
-    Layout = "Master.vbhtml"
-End Code
+@{
+    ViewBag.Title = "User page";
+    Layout = "Master.cshtml";
+}
 
-@Section menu
+@section menu
+{
     RenderSection("menu")
-End Section
-@Section menuitems
+}
+@section menuitems
+{
     <a href="/users">Users</a>
-End Section
+}
 
     <h1>Welcome to the user page</h1>
     <table>
@@ -23,7 +25,7 @@ End Section
             <td>@Model.Name</td>
         </tr>
         <tr>
-            <td>Realname</td>
+            <td>RealName</td>
             <td>@Model.RealName</td>
         </tr>
         <tr>

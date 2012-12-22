@@ -15,7 +15,7 @@ namespace NancyDemo.Csharp.Modules
                     var result = 0;
                     var isInteger = int.TryParse(parameters.id, out result);
                     var bush = bushService.FindById(result);
-                    if (isInteger && bush != null)
+                    if(isInteger && bush != null)
                     {
                         return View[bush];
                     }

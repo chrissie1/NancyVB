@@ -80,6 +80,13 @@
     <Compile Include="Model\BushModel.cs" />
     <Compile Include="Model\TreeModel.cs" />
     <Compile Include="Model\TreesModel.cs" />
+    <Compile Include="Security\AuthenticatedUser.cs" />
+    <Compile Include="Security\FakeUserMapper.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\UsersModel.cs" />
+    <Compile Include="Modules\LoginModule.cs" />
+    <Compile Include="Modules\UsersModule.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,15 +99,26 @@
     <None Include="Views\Bushes.cshtml" />
     <Content Include="Views\AddTree.cshtml" />
     <None Include="Views\Default.cshtml" />
+    <None Include="Views\Login.cshtml" />
     <None Include="Views\Master.cshtml" />
     <None Include="Views\Tree.cshtml" />
     <None Include="Views\Trees.cshtml" />
+    <None Include="Views\User.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Users.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nancy\src\Nancy.Authentication.Forms\Nancy.Authentication.Forms.csproj">
+      <Project>{e8b18958-7c8a-4fba-af00-3041c34a20ce}</Project>
+      <Name>Nancy.Authentication.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

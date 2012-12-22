@@ -1,0 +1,24 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyDemo.Csharp.Model.UsersModel>
+
+@{
+    ViewBag.Title = "Users page";
+    Layout = "Master.cshtml";
+}
+@section menu
+{
+    RenderSection("menu")
+}
+
+    <h1>Welcome to the users page</h1>
+    <table>
+        <tr><th>Id</th><th>Name</th><th>RealName</th><th>password</th></tr>
+        @foreach(var user in Model.Users) {
+            <tr>
+                <td>@user.Id</td>
+                <td><a href="/users/@user.Id">@user.Name</a></td>
+                <td>@user.RealName</td>
+                <td>@user.Password</td>
+            </tr>
+        }
+    </table>
+

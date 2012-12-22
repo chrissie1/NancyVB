@@ -16,7 +16,7 @@ namespace NancyDemo.Csharp.Modules
                     int result;
                     var isInteger = int.TryParse(parameters.id, out result);
                     var tree = treeService.FindById(result);
-                    if (isInteger && tree != null)
+                    if(isInteger && tree != null)
                     {
                         return View[tree];
                     }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\TestTreesModule.cs" />
+    <Compile Include="Modules\TestUsersModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,10 @@
     <Compile Include="Modules\TestBushesModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Nancy\src\Nancy.Authentication.Forms\Nancy.Authentication.Forms.csproj">
+      <Project>{e8b18958-7c8a-4fba-af00-3041c34a20ce}</Project>
+      <Name>Nancy.Authentication.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">
       <Project>{d79203c0-b672-4751-9c95-c3ab7d3fefbe}</Project>
       <Name>Nancy.Testing</Name>
@@ -76,6 +81,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,14 +4,24 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <div id="menu">
+    @if (@Url.RenderContext.Context.CurrentUser == null)
+    {
+        <a href="/login">Login</a>
+    }
+    else
+    {
+        @(((AuthenticatedUser)@Url.RenderContext.Context.CurrentUser).RealName)
+        <a href="/logout">Logout</a>
+    }
     @if(IsSectionDefined("menu")){
-        <div id="menu"><a href="/">Index</a>
-        @if (IsSectionDefined("menuitems"))
+        <a href="/">Index</a>
+        @if(IsSectionDefined("menuitems"))
         {
             @RenderSection("menuitems")
         }
-        </div>
     }
+    </div>
     @RenderBody()
 </body>
 </html>
