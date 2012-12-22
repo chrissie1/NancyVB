@@ -8,7 +8,7 @@
     @If Url.RenderContext.Context.CurrentUser Is Nothing Then 
         @<a href="/login">Login</a>
     Else
-        @Url.RenderContext.Context.CurrentUser.UserName  
+        @CType(Url.RenderContext.Context.CurrentUser, AuthenticatedUser).RealName  
         @<a href="/logout">Logout</a>
     End If
     @If IsSectionDefined("menu") Then

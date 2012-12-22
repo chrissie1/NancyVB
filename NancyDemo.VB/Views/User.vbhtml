@@ -23,6 +23,10 @@ End Section
             <td>@Model.Name</td>
         </tr>
         <tr>
+            <td>Genus</td>
+            <td>@Model.RealName</td>
+        </tr>
+        <tr>
             <td>Password</td>
             <td>@Model.Password</td>
         </tr>

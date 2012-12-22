@@ -17,7 +17,8 @@ Namespace Security
             Return New AuthenticatedUser() With
             {
                 .UserName = user.Name,
-                .Claims = user.Claims
+                .Claims = user.Claims,
+                .RealName = user.RealName
             }
         End Function
 

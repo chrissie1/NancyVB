@@ -7,10 +7,10 @@ Namespace Services
 
         Public Sub New()
             _users = New List(Of UserModel)
-            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000004"), .Name = "Chris1", .Password = "123"})
-            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000001"), .Name = "Chris2", .Password = "123"})
-            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000002"), .Name = "Chris3", .Password = "123"})
-            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000003"), .Name = "Chris4", .Password = "123"})
+            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000004"), .Name = "Chris1", .Password = "123", .RealName = "Christiaan Baes 1"})
+            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000001"), .Name = "Chris2", .Password = "123", .RealName = "Christiaan Baes 2"})
+            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000002"), .Name = "Chris3", .Password = "123", .RealName = "Christiaan Baes 3"})
+            _users.Add(New UserModel With {.Id = New Guid("00000000000000000000000000000003"), .Name = "Chris4", .Password = "123", .RealName = "Christiaan Baes 4"})
         End Sub
 
         Public Function GetUsers() As IList(Of UserModel)

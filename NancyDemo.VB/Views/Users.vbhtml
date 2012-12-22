@@ -15,6 +15,7 @@ End Section
             @<tr>
                 <td>@user.Id</td>
                 <td><a href="/users/@user.Id">@user.Name</a></td>
+                <td>@user.RealName</td>
                 <td>@user.Password</td>
             </tr>
         Next
