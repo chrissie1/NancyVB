@@ -10,7 +10,7 @@ namespace NancyDemo.Csharp.Modules
 
         public TreesModule(TreeService treeService)
         {
-            Get["/trees"] = parameters => View[new TreesModel() {Trees = treeService.AllTrees()}];
+            Get["/trees"] = parameters => Negotiate.WithModel(new TreesModel() { Trees = treeService.AllTrees() });
             Get["/trees/{Id}"] = parameters =>
                 {
                     int result;
@@ -18,7 +18,7 @@ namespace NancyDemo.Csharp.Modules
                     var tree = treeService.FindById(result);
                     if(isInteger && tree != null)
                     {
-                        return View[tree];
+                        return Negotiate.WithModel(tree);
                     }
                     else
                     {

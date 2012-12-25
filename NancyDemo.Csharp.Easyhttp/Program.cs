@@ -9,6 +9,7 @@ namespace NancyDemo.Csharp.Easyhttp
         {
             var http = new HttpClient();
             http.Request.Accept = HttpContentTypes.ApplicationJson;
+            http.Request.ParametersAsSegments = true;
             var trees = http.Get("http://localhost:55360/trees");
             foreach(var t in trees.DynamicBody.Trees)
             {
@@ -19,6 +20,11 @@ namespace NancyDemo.Csharp.Easyhttp
             var tree = result.DynamicBody;
             Console.WriteLine(tree.Id);
             Console.WriteLine(tree.Genus);
+            result = http.Get("http://localhost:55360/trees", new { Id = 2 });
+            tree = result.DynamicBody;
+            Console.WriteLine(tree.Id);
+            Console.WriteLine(tree.Genus);
+            
             Console.ReadLine();
         }
     }
