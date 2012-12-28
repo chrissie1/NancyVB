@@ -98,6 +98,7 @@
     <None Include="Views\Bush.cshtml" />
     <None Include="Views\Bushes.cshtml" />
     <Content Include="Views\AddTree.cshtml" />
+    <Content Include="Views\UploadUserImage.cshtml" />
     <None Include="Views\Default.cshtml" />
     <None Include="Views\Login.cshtml" />
     <None Include="Views\Master.cshtml" />
@@ -119,6 +120,9 @@
       <Project>{e8b18958-7c8a-4fba-af00-3041c34a20ce}</Project>
       <Name>Nancy.Authentication.Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

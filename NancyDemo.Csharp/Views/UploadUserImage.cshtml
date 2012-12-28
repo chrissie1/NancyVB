@@ -1,20 +1,20 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyDemo.Csharp.Model.UserModel>
-
 @{
-    ViewBag.Title = "User page";
+    ViewBag.Title = "Add user image page";
     Layout = "Master.cshtml";
 }
 
+
 @section menu
 {
-    RenderSection("menu")
+Rendersection("menu")
 }
 @section menuitems
 {
     <a href="/users">Users</a>
 }
 
-    <h1>Welcome to the user page</h1>
+<h1>Welcome to the add user image page</h1>
 <table>
     <tr>
         <td>Id</td>
@@ -32,10 +32,8 @@
         <td>Password</td>
         <td>@Model.Password</td>
     </tr>
-    <tr>
-        <td>FileDetails</td>
-        <td>@Model.FileDetails</td>
-    </tr>
 </table>
-<a href="/users/userimageupload/@Model.Id">Upload image</a><br />
-<img src="/users/getimage/@Model.Id"/>
+<form action="/users/userimageupload/@Model.Id" method="post" enctype="multipart/form-data">
+    <input name="upload" type="file" size="40" />
+    <input type="submit" value="Post!" />
+</form>
