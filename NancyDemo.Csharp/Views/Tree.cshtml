@@ -15,15 +15,18 @@
 }
 
     <h1>Welcome to the tree page</h1>
-    <table>
-        <tr>
-            <td>Id</td>
-            <td>@Model.Id</td>
-        </tr>
-        <tr>
-            <td>Genus</td>
-            <td>@Model.Genus</td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>Genus</td>
+        <td>@Model.Genus</td>
+    </tr>
+</table>
+<div id="pdf">
+    <iframe width="400" height="500" src="/trees/pdf/@Model.Id" id="pdf_content" />
+</div>
 
     

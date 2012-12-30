@@ -2,6 +2,7 @@
 using Nancy.Authentication.Forms;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
+using NancyDemo.Csharp.Processors;
 using NancyDemo.Csharp.Security;
 using NancyDemo.Csharp.Services;
 
@@ -9,7 +10,6 @@ namespace NancyDemo.Csharp
 {
     public class MyBootStrapper : DefaultNancyBootstrapper
     {
-    
 
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {

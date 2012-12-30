@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.3.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.0.14.1\lib\net40\Nancy.dll</HintPath>
@@ -71,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyBootStrapper.cs" />
+    <Compile Include="Processors\PdfProcessor.cs" />
+    <Compile Include="Processors\PdfResponse.cs" />
+    <Compile Include="Processors\TreeModelPdfResponse.cs" />
     <Compile Include="Services\BushService.cs" />
     <Compile Include="Services\TreeService.cs" />
     <Compile Include="Modules\BushesModule.cs" />
@@ -123,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Processors\PdfTemplates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
