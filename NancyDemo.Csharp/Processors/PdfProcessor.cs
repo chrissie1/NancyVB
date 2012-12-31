@@ -12,11 +12,30 @@ namespace NancyDemo.Csharp.Processors
 
         public ProcessorMatch CanProcess(MediaRange requestedMediaRange, dynamic model, NancyContext context)
         {
+            if (IsExactPdfContentType(requestedMediaRange))
+            {
+                return new ProcessorMatch
+                    {
+                        ModelResult = MatchResult.DontCare,
+                        RequestedContentTypeResult = MatchResult.ExactMatch
+                    };
+            }
+
             return new ProcessorMatch
             {
                 ModelResult = MatchResult.DontCare,
-                RequestedContentTypeResult = MatchResult.ExactMatch
+                RequestedContentTypeResult = MatchResult.NoMatch
             };
+        }
+
+        private static bool IsExactPdfContentType(MediaRange requestedContentType)
+        {
+            if (requestedContentType.Type.IsWildcard && requestedContentType.Subtype.IsWildcard)
+            {
+                return true;
+            }
+
+            return requestedContentType.Matches("application/pdf");
         }
 
         public Response Process(MediaRange requestedMediaRange, dynamic model, NancyContext context)
