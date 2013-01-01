@@ -3,6 +3,7 @@ using Nancy;
 using Nancy.Responses;
 using NancyDemo.Csharp.Model;
 using NancyDemo.Csharp.Processors;
+using NancyDemo.Csharp.Responses;
 using NancyDemo.Csharp.Services;
 
 namespace NancyDemo.Csharp.Modules
@@ -17,7 +18,6 @@ namespace NancyDemo.Csharp.Modules
                 {
                     int result;
                     var isInteger = int.TryParse(parameters.id, out result);
-                    var reslt2 = parameters.id.Default(-1);
                     var tree = treeService.FindById(result);
                     if(isInteger  && tree != null)
                     {

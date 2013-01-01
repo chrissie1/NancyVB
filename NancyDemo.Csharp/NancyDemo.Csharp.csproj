@@ -51,6 +51,9 @@
     <Reference Include="Nancy.ViewEngines.Razor">
       <HintPath>..\packages\Nancy.Viewengines.Razor.0.14.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.32\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,8 +78,8 @@
   <ItemGroup>
     <Compile Include="MyBootStrapper.cs" />
     <Compile Include="Processors\PdfProcessor.cs" />
-    <Compile Include="Processors\PdfResponse.cs" />
-    <Compile Include="Processors\TreeModelPdfResponse.cs" />
+    <Compile Include="Responses\PdfResponse.cs" />
+    <Compile Include="Responses\TreeModelPdfResponse.cs" />
     <Compile Include="Services\BushService.cs" />
     <Compile Include="Services\TreeService.cs" />
     <Compile Include="Modules\BushesModule.cs" />
@@ -129,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Processors\PdfTemplates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

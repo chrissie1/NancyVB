@@ -86,9 +86,9 @@ namespace NancyDemo.Csharp.Tests.Modules
         }
 
         [Test]
-        public void IfPlantWithId10ReturnsStatusCodeNotFound()
+        public void IfPlantWithId100ReturnsStatusCodeNotFound()
         {
-            var result = _browser.Get("/trees/10", x =>
+            var result = _browser.Get("/trees/100", x =>
             {
                 x.HttpRequest();
             });

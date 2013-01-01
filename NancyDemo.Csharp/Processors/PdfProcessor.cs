@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Nancy;
 using Nancy.Responses.Negotiation;
+using NancyDemo.Csharp.Responses;
 
 namespace NancyDemo.Csharp.Processors
 {
