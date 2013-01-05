@@ -2,26 +2,46 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Css/style.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="menu">
-    @if (@Url.RenderContext.Context.CurrentUser == null)
-    {
-        <a href="/login">Login</a>
-    }
-    else
-    {
-        @(((AuthenticatedUser)@Url.RenderContext.Context.CurrentUser).RealName)
-        <a href="/logout">Logout</a>
-    }
-    @if(IsSectionDefined("menu")){
-        <a href="/">Index</a>
-        @if(IsSectionDefined("menuitems"))
-        {
-            @RenderSection("menuitems")
-        }
-    }
+    <div id="menu-wrapper">
+        <div id="menu">
+            <ul>
+                <li @if (IsSectionDefined("home")) { <text>class="current_page_item"</text>}><a href="/">Home</a></li>
+                <li @if (IsSectionDefined("trees")) { <text>class="current_page_item"</text>}><a href="/trees">Trees</a></li>
+                <li @if (IsSectionDefined("bushes")) { <text>class="current_page_item"</text>}><a href="/bushes">Bushes</a></li>
+                <li @if (IsSectionDefined("users")) { <text>class="current_page_item"</text>}><a href="/users">Users</a></li>
+                @if (@Url.RenderContext.Context.CurrentUser == null)
+                {
+                    <li @if (IsSectionDefined("login")) { <text>class="current_page_item"</text>}><a href="/login">Login</a></li>
+                }
+                else
+                {
+                    <li><a href="/logout">Logout</a></li>
+                }
+            </ul>
+        </div>
     </div>
-    @RenderBody()
+
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#">NancyDemo <span>C#</span></a></h1>
+                <p>Template design by <a href="http://www.freecsstemplates.org">FCT</a></p>
+                @if (@Url.RenderContext.Context.CurrentUser != null)
+                {
+                    <div class="username">Logged in user: <a href="\users\@(((AuthenticatedUser)@Url.RenderContext.Context.CurrentUser).Id)">@(((AuthenticatedUser)@Url.RenderContext.Context.CurrentUser).RealName)</a></div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
 </body>
 </html>

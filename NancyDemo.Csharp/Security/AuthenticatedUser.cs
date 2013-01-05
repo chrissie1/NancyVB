@@ -6,6 +6,7 @@ namespace NancyDemo.Csharp.Security
 {
     public class AuthenticatedUser : IUserIdentity
     {
+        public string Id { get; set; }
         public String UserName { get; set; }
         public IEnumerable<String> Claims { get; set; } 
         public String RealName { get; set; }

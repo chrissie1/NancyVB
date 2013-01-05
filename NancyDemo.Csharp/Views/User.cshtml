@@ -1,20 +1,12 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyDemo.Csharp.Model.UserModel>
-
 @{
     ViewBag.Title = "User page";
     Layout = "Master.cshtml";
 }
 
-@section menu
-{
-    RenderSection("menu")
-}
-@section menuitems
-{
-    <a href="/users">Users</a>
-}
+@section users
 
-    <h1>Welcome to the user page</h1>
+<h1>Welcome to the user page</h1>
 <table>
     <tr>
         <td>Id</td>

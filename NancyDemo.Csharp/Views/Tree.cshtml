@@ -1,20 +1,12 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyDemo.Csharp.Model.TreeModel>
-
 @{
     ViewBag.Title = "Tree page";
     Layout = "Master.cshtml";
 }
 
-@section menu
-{
-    Rendersection("menu")
-}
-@section menuitems
-{
-    <a href="/trees">Trees</a>
-}
+@section trees
 
-    <h1>Welcome to the tree page</h1>
+<h1>Welcome to the tree page</h1>
 <table>
     <tr>
         <td>Id</td>
@@ -29,4 +21,5 @@
     <iframe width="400" height="500" src="/trees/pdf/@Model.Id" id="pdf_content" />
 </div>
 
-    
+
+

@@ -19,6 +19,7 @@ namespace NancyDemo.Csharp.Security
             var user = _userService.GetById(identifier);
             return new AuthenticatedUser
                 {
+                    Id = user.Id.ToString(),
                     UserName = user.Name,
                     Claims = user.Claims,
                     RealName = user.RealName

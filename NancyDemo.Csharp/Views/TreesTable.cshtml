@@ -1,0 +1,15 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<System.Collections.Generic.IList<NancyDemo.Csharp.Model.TreeModel>>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var tree in Model)
+    {
+        <tr>
+            <td>@tree.Id</td>
+            <td><a href="/trees/@tree.Id">@tree.Genus</a></td>
+        </tr>
+    }
+</table>

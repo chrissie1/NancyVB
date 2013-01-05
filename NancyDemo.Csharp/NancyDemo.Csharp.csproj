@@ -96,6 +96,9 @@
     <Compile Include="Modules\LoginModule.cs" />
     <Compile Include="Modules\UsersModule.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\images\img04.jpg" />
+    <Content Include="Content\license.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +114,7 @@
     <None Include="Views\Default.cshtml" />
     <None Include="Views\Login.cshtml" />
     <None Include="Views\Master.cshtml" />
+    <Content Include="Views\TreesTable.cshtml" />
     <None Include="Views\Tree.cshtml" />
     <None Include="Views\Trees.cshtml" />
     <None Include="Views\User.cshtml">
@@ -131,6 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\uploads\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
