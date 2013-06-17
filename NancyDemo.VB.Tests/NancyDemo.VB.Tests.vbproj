@@ -49,9 +49,17 @@
     <Reference Include="FakeItEasy">
       <HintPath>..\packages\FakeItEasy.1.7.4626.65\lib\NET40\FakeItEasy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Authentication.Forms, Version=0.14.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WebApplication2\Bin\Nancy.Authentication.Forms.dll</HintPath>
+     <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.14.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>..\packages\Nancy.Viewengines.Razor.0.14.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.0.14.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Testing">
+      <HintPath>..\packages\Nancy.Testing.0.14.1\lib\net40\Nancy.Testing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
@@ -117,18 +125,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">
-      <Project>{d79203c0-b672-4751-9c95-c3ab7d3fefbe}</Project>
-      <Name>Nancy.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Nancy\src\Nancy.ViewEngines.Razor\Nancy.ViewEngines.Razor.csproj">
-      <Project>{2c6f51df-015c-4db6-b44c-0e5e4f25e2a9}</Project>
-      <Name>Nancy.ViewEngines.Razor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Nancy\src\Nancy\Nancy.csproj">
-      <Project>{34576216-0dca-4b0f-a0dc-9075e75a676f}</Project>
-      <Name>Nancy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NancyDemo.VB\NancyDemo.VB.vbproj">
       <Project>{32cacb78-fe82-4332-b5e7-3b9fb2691a70}</Project>
       <Name>NancyDemo.VB</Name>

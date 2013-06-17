@@ -30,7 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
+     <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.14.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>..\packages\Nancy.Viewengines.Razor.0.14.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.0.14.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Testing">
+      <HintPath>..\packages\Nancy.Testing.0.14.1\lib\net40\Nancy.Testing.dll</HintPath>
+    </Reference>
+   <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.1.0\lib\net35\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="FakeItEasy">
@@ -59,22 +71,6 @@
     <Compile Include="Modules\TestBushesModule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Nancy\src\Nancy.Authentication.Forms\Nancy.Authentication.Forms.csproj">
-      <Project>{e8b18958-7c8a-4fba-af00-3041c34a20ce}</Project>
-      <Name>Nancy.Authentication.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">
-      <Project>{d79203c0-b672-4751-9c95-c3ab7d3fefbe}</Project>
-      <Name>Nancy.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Nancy\src\Nancy.ViewEngines.Razor\Nancy.ViewEngines.Razor.csproj">
-      <Project>{2c6f51df-015c-4db6-b44c-0e5e4f25e2a9}</Project>
-      <Name>Nancy.ViewEngines.Razor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Nancy\src\Nancy\Nancy.csproj">
-      <Project>{34576216-0dca-4b0f-a0dc-9075e75a676f}</Project>
-      <Name>Nancy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NancyDemo.Csharp\NancyDemo.Csharp.csproj">
       <Project>{18cf0bec-9aac-41fb-9439-e82a06be15b2}</Project>
       <Name>NancyDemo.Csharp</Name>
